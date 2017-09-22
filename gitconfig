@@ -1,0 +1,12 @@
+[user]
+	email = zl256@cornell.edu
+	name = Zhijiang Li
+[color]
+	ui = auto
+[core]
+	pager = less -FMRiX
+	# excludesfile = /Users/zhijianl/.config/git/excludes
+[push]
+	default = simple
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
