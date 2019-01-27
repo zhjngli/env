@@ -5,7 +5,7 @@
 	ui = auto
 [core]
 	pager = less -FMRiX
-	# excludesfile = /Users/zhijianl/.config/git/excludes
+	# excludesfile = $HOME/.config/git/excludes
 [push]
 	default = simple
 [alias]
