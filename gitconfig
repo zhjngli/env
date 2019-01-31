@@ -5,6 +5,7 @@
 	ui = auto
 [core]
 	pager = less -FMRiX
+	editor = vim
 	# excludesfile = $HOME/.config/git/excludes
 [push]
 	default = simple
