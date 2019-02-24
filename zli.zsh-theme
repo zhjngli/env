@@ -24,8 +24,6 @@ git_prompt_info() {
 
 local ret_status="%(?:%{$fg_bold[green]%}λ= :%{$fg_bold[red]%}λ= )"
 
-PROMPT='
-${datetime} ${login_info}::${current_pwd} $(git_prompt_info)
+PROMPT='${datetime} ${login_info}::${current_pwd} $(git_prompt_info)
 ${ret_status}%{$reset_color%}'
-
 
