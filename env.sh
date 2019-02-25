@@ -8,9 +8,9 @@ usage() {
     ENV_OPTIONS="$GIT_OPTION $VIMRC_OPTION $ZSHTHEME_OPTION"
 
     echo "Installs or retrieves some env files"
-    echo "./$0 -h|--help"
-    echo "./$0 -i|--install $ENV_OPTIONS"
-    echo "./$0 -r|--retrieve $ENV_OPTIONS"
+    echo "\t-h|--help"
+    echo "\t-i|--install $ENV_OPTIONS"
+    echo "\t-r|--retrieve $ENV_OPTIONS"
 }
 
 smart_cp() {
