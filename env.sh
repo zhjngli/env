@@ -4,8 +4,8 @@ usage() {
     GIT_OPTION="[g|git]"
     VIMRC_OPTION="[vrc|vimrc]"
     ZSHTHEME_OPTION="[zth|zsh-theme]"
-
-    ENV_OPTIONS="$GIT_OPTION $VIMRC_OPTION $ZSHTHEME_OPTION"
+    ZSHRC_OPTION="[zrc|zshrc]"
+    ENV_OPTIONS="$GIT_OPTION $VIMRC_OPTION $ZSHRC_OPTION $ZSHTHEME_OPTION"
 
     echo "Installs or retrieves some env files"
     echo "\t-h|--help"
@@ -47,6 +47,9 @@ env_setup() {
                 ;;
             zth | zsh-theme)
                 smart_cp $PWD/zli.zsh-theme $HOME/.oh-my-zsh/themes/zli.zsh-theme
+                ;;
+            zrc | zshrc)
+                smart_cp $PWD/zshrc $HOME/.zshrc
                 ;;
             *)
                 echo "WARNING: Skipping unknown installation option \"$1\""
