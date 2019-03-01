@@ -10,7 +10,7 @@ eval muted_color='$FG[244]'
 local login_info="%{$reset_color%}%{$muted_color%}[%n@%m]"
 local datetime="%{$muted_color%}(%D{%F %r %z})"
 # ${PWD/#HOME/~ can be a replacement for %~
-local current_pwd="%{$fg_bold[cyan]%}%~"
+local current_pwd="%{$fg[cyan]%}%~"
 
 git_prompt_info() {
     local branch=$(git_current_branch)
