@@ -1,16 +1,18 @@
 ### zsh theme for zli
+# https://wiki.archlinux.org/index.php/zsh
+# http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
 
 ZSH_THEME_GIT_PROMPT_PREFIX="<"
-ZSH_THEME_GIT_PROMPT_SUFFIX=">"
-ZSH_THEME_GIT_PROMPT_DIRTY="$FG[009]"
-ZSH_THEME_GIT_PROMPT_CLEAN="$FG[010]"
+ZSH_THEME_GIT_PROMPT_SUFFIX=">%b%f"
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{185}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%F{155}"
 
 # for some reason fg and fg_bold don't work here
-eval muted_color='$FG[244]'
-local login_info="%{$reset_color%}%{$muted_color%}[%n@%m]"
-local datetime="%{$muted_color%}(%D{%F %r %z})"
+eval muted_color='%F{244}'
+local login_info="%{$muted_color%}[%n@%m]%f"
+local datetime="%{$muted_color%}(%D{%F %r %z})%f"
 # ${PWD/#HOME/~ can be a replacement for %~
-local current_pwd="%{$fg[cyan]%}%~"
+local current_pwd="%B%F{080}%~%b%f"
 
 git_prompt_info() {
     local branch=$(git_current_branch)
@@ -22,8 +24,8 @@ git_prompt_info() {
     fi
 }
 
-local ret_status="%(?:%{$fg_bold[green]%}λ= :%{$fg_bold[red]%}λ= )"
+local ret_status="%B%(?:%F{002}λ= :%F{001}λ= )"
 
 PROMPT='${datetime} ${current_pwd} $(git_prompt_info)
-${login_info} ${ret_status}%{$reset_color%}'
+${login_info} ${ret_status}%b%f'
 
