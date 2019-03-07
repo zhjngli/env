@@ -14,11 +14,37 @@ Plugin 'leshill/vim-json'               " Proper JSON filetype detection, and su
 Plugin 'pangloss/vim-javascript'        " Better javascript indent support
 Plugin 'vim-scripts/indenthtml.vim'     " Better html indent support
 Plugin 'tpope/vim-markdown'             " Better markdown syntax support
+Plugin 'neovimhaskell/haskell-vim'      " Syntax and indentation for haskell
 
 call vundle#end()
 
 filetype plugin indent on       " Filetype auto-detection
 syntax on                       " Syntax highlighting
+
+""" colorscheme
+colorscheme space-vim-dark
+hi Normal ctermbg=NONE guibg=NONE
+hi LineNr ctermbg=NONE guibg=NONE
+
+
+""" vimrc autoreload on save
+if has ('autocmd')
+    augroup myvimrc
+        autocmd!
+        autocmd BufWritePost $MYVIMRC :source $MYVIMRC
+    augroup END
+endif
+
+
+""" Haskell
+let g:haskell_classic_highlighting = 1
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
 
 
 """ Usability
@@ -88,4 +114,3 @@ noremap k gk
 " Map the key for toggling comments with vim-commentary
 nnoremap <leader>c :Commentary<cr>
 
-colorscheme ayu
