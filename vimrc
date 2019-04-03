@@ -60,6 +60,7 @@ set confirm                     " confirm save instead of failing
 set mouse=a                     " can use mouse in all modes
 set cmdheight=2                 " cmd window height is 2
 set hidden                      " allows buffers with unsaved changes
+set whichwrap+=<,>,[,],h,l,~    " arrow keys can wrap in normal and insert modes
 "set autoread                    " autoread files when changed on disk
 
 " Tabs and indenting
@@ -80,7 +81,7 @@ noremap <leader><space> :set list!<CR>
 " for depending solely on VCS
 "set nobackup
 "set nowritebackup
-"set noswapfile
+set noswapfile
 
 " Better search settings
 set ignorecase          " case insensitive search
