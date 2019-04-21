@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'           " Great vim plugin bundler
 Plugin 'flazz/vim-colorschemes'         " Lots of colorschemes
 Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy finder
 Plugin 'tpope/vim-commentary'           " commenting lines in vim
+Plugin 'Valloric/YouCompleteMe'         " vim autocompletion
 Plugin 'leshill/vim-json'               " Proper JSON filetype detection, and support
 Plugin 'pangloss/vim-javascript'        " Better javascript indent support
 Plugin 'vim-scripts/indenthtml.vim'     " Better html indent support
