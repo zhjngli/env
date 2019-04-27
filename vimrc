@@ -8,6 +8,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'           " Great vim plugin bundler
 Plugin 'flazz/vim-colorschemes'         " Lots of colorschemes
+Plugin 'scrooloose/nerdtree'            " file system explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin'    " nerdtree with git
 Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy finder
 Plugin 'tpope/vim-commentary'           " commenting lines in vim
 Plugin 'Valloric/YouCompleteMe'         " vim autocompletion
@@ -115,4 +117,9 @@ noremap k gk
 
 " Map the key for toggling comments with vim-commentary
 nnoremap <leader>c :Commentary<cr>
+
+" NERDTree
+" close vim if the only window left is a NERDTree window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+noremap <C-\> :NERDTreeToggle<CR>
 
