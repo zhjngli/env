@@ -119,7 +119,7 @@ noremap k gk
 inoremap <C-Up>    <ESC>{i
 inoremap <C-Down>  <ESC>}i
 inoremap <C-Left>  <ESC>bi
-inoremap <C-Right> <ESC>wi
+inoremap <C-Right> <Right><ESC>wi
 
 " Map the key for toggling comments with vim-commentary
 nnoremap <leader>c :Commentary<cr>
