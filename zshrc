@@ -108,3 +108,16 @@ function clicolors() {
 
 bindkey '^ ' autosuggest-accept
 
+alias ll='ls -lhF --group-directories-first'
+alias la='ls -lhAF --group-directories-first'
+
+# ubuntu open alias
+alias open='xdg-open'
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '/home/zli/.netlify/helper/path.zsh.inc' ]; then source '/home/zli/.netlify/helper/path.zsh.inc'; fi
