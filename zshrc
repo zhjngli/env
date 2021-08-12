@@ -110,6 +110,7 @@ bindkey '^ ' autosuggest-accept
 
 alias ll='ls -lhF --group-directories-first'
 alias la='ls -lhAF --group-directories-first'
+alias g='git'
 
 # ubuntu open alias
 alias open='xdg-open'
