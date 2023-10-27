@@ -24,6 +24,7 @@
     rb = rebase
     rfl = reflog
     d = diff
+    cp = cherry-pick
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
