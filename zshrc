@@ -59,7 +59,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,11 @@ function clicolors() {
 
 bindkey '^ ' autosuggest-accept
 
+if [ "$OSTYPE" != linux-gnu ]; then  # Is this the macOS system?
+    alias ls='gls --color=auto'
+fi
+
+alias l='ls -lhF --group-directories-first'
 alias ll='ls -lhF --group-directories-first'
 alias la='ls -lhaF --group-directories-first'
 alias g='git'
