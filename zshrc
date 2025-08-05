@@ -108,7 +108,9 @@ function clicolors() {
 
 bindkey '^ ' autosuggest-accept
 
-if [ "$OSTYPE" != linux-gnu ]; then  # Is this the macOS system?
+# Is this the macOS system?
+# gls comes from `brew install coreutils`
+if [ "$OSTYPE" != linux-gnu ]; then
     alias ls='gls --color=auto'
 fi
 
