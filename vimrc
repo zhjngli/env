@@ -12,12 +12,12 @@ Plugin 'scrooloose/nerdtree'            " file system explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin'    " nerdtree with git
 Plugin 'ctrlpvim/ctrlp.vim'             " Fuzzy finder
 Plugin 'tpope/vim-commentary'           " commenting lines in vim
-Plugin 'Valloric/YouCompleteMe'         " vim autocompletion
-Plugin 'leshill/vim-json'               " Proper JSON filetype detection, and support
-Plugin 'pangloss/vim-javascript'        " Better javascript indent support
-Plugin 'vim-scripts/indenthtml.vim'     " Better html indent support
+" Plugin 'Valloric/YouCompleteMe'         " vim autocompletion
+" Plugin 'leshill/vim-json'               " Proper JSON filetype detection, and support
+" Plugin 'pangloss/vim-javascript'        " Better javascript indent support
+" Plugin 'vim-scripts/indenthtml.vim'     " Better html indent support
 Plugin 'tpope/vim-markdown'             " Better markdown syntax support
-Plugin 'neovimhaskell/haskell-vim'      " Syntax and indentation for haskell
+" Plugin 'neovimhaskell/haskell-vim'      " Syntax and indentation for haskell
 
 call vundle#end()
 
