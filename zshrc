@@ -33,7 +33,7 @@ ZSH_THEME="zli"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -118,6 +118,8 @@ alias l='ls -lhF --group-directories-first'
 alias ll='ls -lhF --group-directories-first'
 alias la='ls -lhaF --group-directories-first'
 alias g='git'
+
+source <(fzf --zsh)
 
 # ubuntu open alias
 # alias open='xdg-open'

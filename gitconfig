@@ -4,11 +4,18 @@
 [color]
     ui = auto
 [core]
-    pager = less -FMRiX
+    pager = delta
     editor = vim
     # excludesfile = $HOME/.config/git/excludes
 [push]
     default = simple
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+[merge]
+    conflictStyle = zdiff3
 [alias]
     l = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
     a = add

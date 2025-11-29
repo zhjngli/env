@@ -13,12 +13,37 @@ usage() {
 }
 
 smart_link() {
+    echo "Trying to create symlink: \"$2\" -> \"$1\""
+
+    if [ -e "$2" ]; then
+        if [ -L "$2" ]; then
+            echo "Skipping: \"$2\" is already a symlink."
+        else
+            echo "Skipping: \"$2\" already exists."
+        fi
+        echo "  To override, run: ln -sf \"$1\" \"$2\""
+        return
+    fi
+
     mkdir -p "$(dirname "$2")"
-    ln -sf "$1" "$2"
+    ln -s "$1" "$2"
     echo "Created symlink: \"$2\" -> \"$1\""
 }
 
-env_setup() {
+run_installers() {
+    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+    INSTALLERS_DIR="$SCRIPT_DIR/installers"
+
+    echo "Running installer scripts..."
+    for installer in $(ls "$INSTALLERS_DIR"/*.sh 2>/dev/null | sort); do
+        if [ -f "$installer" ]; then
+            echo "Running $(basename "$installer")..."
+            "$installer"
+        fi
+    done
+}
+
+link_dotfiles() {
     SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
     while [ "$1" != "" ]; do
@@ -50,7 +75,8 @@ if [ "$1" != "" ]; then
             exit
             ;;
         -i | --install)
-            env_setup ${@:2}
+            run_installers
+            link_dotfiles ${@:2}
             exit
             ;;
         *)
