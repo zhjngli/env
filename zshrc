@@ -109,9 +109,8 @@ function clicolors() {
 bindkey '^ ' autosuggest-accept
 
 # Is this the macOS system?
-# gls comes from `brew install coreutils`
 if [ "$OSTYPE" != linux-gnu ]; then
-    alias ls='gls --color=auto'
+    alias ls='eza --color=always'
 fi
 
 alias l='ls -lhF --group-directories-first'
